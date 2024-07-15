@@ -10,8 +10,8 @@ import {
 } from '@nestjs/common';
 import { AuthGuard, Public } from './auth.guard';
 import { AuthService } from './auth.service';
-import { CreateUserDto } from 'src/shared/dto/user.dtos';
-import { User } from 'src/shared/interfaces/user.interfaces';
+import { CreateUserDto } from '../shared/dto/user.dtos';
+import { User } from '../shared/interfaces/user.interfaces';
 
 @Controller('auth')
 export class AuthController {

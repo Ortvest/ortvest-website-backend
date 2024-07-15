@@ -2,7 +2,7 @@ import { OrdersController } from './orders.controller';
 import { Module } from '@nestjs/common';
 import { OrdersService } from './orders.service';
 import { MongooseModule } from '@nestjs/mongoose';
-import { Order, OrderSchema } from 'src/shared/schemas/order.schema';
+import { Order, OrderSchema } from '../shared/schemas/order.schema';
 @Module({
   imports: [
     MongooseModule.forFeature([{ name: Order.name, schema: OrderSchema }]),
