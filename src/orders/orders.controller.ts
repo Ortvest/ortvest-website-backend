@@ -8,12 +8,12 @@ export class OrdersController {
   constructor(private readonly ordersService: OrdersService) {}
 
   @Get('/all')
-  getAllOrders(): Order[] {
-    return this.ordersService.getAllOrders();
+  async getAllOrders(): Promise<Order[]> {
+    return await this.ordersService.getAllOrders();
   }
 
   @Post('/new')
-  addNewOrder(@Body() order: CreateOrderDto): boolean {
-    return this.ordersService.addNewOrder(order);
+  async addNewOrder(@Body() order: CreateOrderDto): Promise<boolean> {
+    return await this.ordersService.addNewOrder(order);
   }
 }
