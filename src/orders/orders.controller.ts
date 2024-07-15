@@ -1,7 +1,7 @@
 import { Body, Controller, Get, Post, UseGuards } from '@nestjs/common';
 import { OrdersService } from './orders.service';
-import { Order } from 'src/shared/interfaces/Orders.interfaces';
-import { CreateOrderDto } from 'src/shared/dto/Order.dto';
+import { Order } from 'src/shared/interfaces/orders.interfaces';
+import { CreateOrderDto } from 'src/shared/dto/order.dtos';
 import { AuthGuard } from 'src/auth/auth.guard';
 
 @Controller('/orders')

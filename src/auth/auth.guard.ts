@@ -6,11 +6,12 @@ import {
 } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { Request } from 'express';
-
+import { SetMetadata } from '@nestjs/common';
 import * as dotenv from 'dotenv';
 
 dotenv.config();
 const secretKey = process.env.JWT_SECRET;
+const publicKey = process.env.IS_PUBLIC_KEY;
 @Injectable()
 export class AuthGuard implements CanActivate {
   constructor(private jwtService: JwtService) {}
@@ -44,3 +45,5 @@ export class AuthGuard implements CanActivate {
     });
   }
 }
+
+export const Public = () => SetMetadata(publicKey, true);
