@@ -20,6 +20,4 @@ jobs:
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}  # Required for authentication
           VERCEL_PROJECT_NAME: ortvest-website-backend  # Set your Vercel project name
-          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}  # Optional: if you are using a Vercel team/organization
-          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}  # Optional: specify the project ID explicitly
-        run: vercel --prod --token $VERCEL_TOKEN --scope $VERCEL_ORG_ID --project $VERCEL_PROJECT_NAME
+        run: vercel --prod --token $VERCEL_TOKEN --project $VERCEL_PROJECT_NAME
