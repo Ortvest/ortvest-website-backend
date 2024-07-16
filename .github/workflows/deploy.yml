@@ -19,5 +19,4 @@ jobs:
       - name: Vercel Deploy
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}  # Required for authentication
-          VERCEL_PROJECT_NAME: ortvest-website-backend  # Set your Vercel project name
-        run: vercel --prod --token $VERCEL_TOKEN --project $VERCEL_PROJECT_NAME
+        run: vercel --prod --token $VERCEL_TOKEN
