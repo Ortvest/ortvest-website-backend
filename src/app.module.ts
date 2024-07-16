@@ -27,10 +27,7 @@ export class AppModule {
   configure(consumer: MiddlewareConsumer) {
     consumer
       .apply((req, res, next) => {
-        res.header(
-          'Access-Control-Allow-Origin',
-          'https://ortvest-admin.vercel.app',
-        );
+        res.header('Access-Control-Allow-Origin', '*');
         res.header(
           'Access-Control-Allow-Methods',
           'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
