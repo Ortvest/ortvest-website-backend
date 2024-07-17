@@ -2,10 +2,8 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 
 const options = {
-  origin: '*',
-  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-  preflightContinue: true,
-  optionsSuccessStatus: 204,
+  origin: 'https://ortvest-admin.vercel.app', // Removed trailing slash
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   credentials: true,
 };
 async function bootstrap() {
