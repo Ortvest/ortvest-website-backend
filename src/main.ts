@@ -4,6 +4,7 @@ import { AppModule } from './app.module';
 const options = {
   origin: 'https://ortvest-admin.vercel.app', // Removed trailing slash
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Authorization', 'Content-Type'],
   credentials: true,
 };
 async function bootstrap() {
