@@ -14,6 +14,7 @@ async function bootstrap() {
       'Access-Control-Allow-Origin',
       'Mode',
       'Access-Control-Allow-Credentials',
+      'allow-control-allow-origin',
     ],
     credentials: true,
   });
