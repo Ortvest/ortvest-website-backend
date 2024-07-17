@@ -7,16 +7,8 @@ async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
 
   app.enableCors({
-    origin: ['https://ortvest-admin.vercel.app', 'https://www.ortvest.com/'],
+    origin: ['https://ortvest-admin.vercel.app', 'https://www.ortvest.com'],
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    // allowedHeaders: [
-    //   'Authorization',
-    //   'Content-Type',
-    //   'Access-Control-Allow-Origin',
-    //   'Mode',
-    //   'Access-Control-Allow-Credentials',
-    //   'allow-control-allow-origin',
-    // ],
     credentials: true,
   });
 
