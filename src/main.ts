@@ -19,6 +19,31 @@ async function bootstrap() {
     credentials: true,
   });
 
+  app.use((req, res, next) => {
+    const corsWhitelist = [
+      'https://ortvest-admin.vercel.app',
+      'https://www.ortvest.com/',
+    ];
+    if (corsWhitelist.includes(req.headers.origin)) {
+      res.header('Access-Control-Allow-Origin', req.headers.origin);
+      res.header('Access-Control-Allow-Credentials', 'true');
+      res.header(
+        'Access-Control-Allow-Headers',
+        'Origin, X-Requested-With, Content-Type, Accept',
+      );
+      res.header(
+        'Access-Control-Allow-Headers',
+        'Origin, X-Requested-With, Content-Type, Accept',
+      );
+      res.header('Access-Control-Allow-Methods', [
+        'PUT',
+        'DELETE',
+        'POST',
+        'GET',
+      ]);
+    }
+    next();
+  });
   await app.listen(8080);
 }
 bootstrap();

@@ -12,10 +12,7 @@
       "dest": "src/main.ts",
       "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
       "headers": {
-        "Access-Control-Allow-Origin": [
-          "https://ortvest-admin.vercel.app",
-          "https://www.ortvest.com/"
-        ],
+        "Access-Control-Allow-Origin": "https://ortvest-admin.vercel.app, https://www.ortvest.com/",
         "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
         "Access-Control-Allow-Headers": "Content-Type, Authorization",
         "Access-Control-Allow-Credentials": "true"
