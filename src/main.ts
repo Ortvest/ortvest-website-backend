@@ -1,20 +1,21 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
+import { NestExpressApplication } from '@nestjs/platform-express';
 
-const options = {
-  origin: 'https://ortvest-admin.vercel.app', // Removed trailing slash
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: [
-    'Authorization',
-    'Content-Type',
-    'Allow-Control-Allow-Origin',
-  ],
-  credentials: true,
-};
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
+  const app = await NestFactory.create<NestExpressApplication>(AppModule);
 
-  app.enableCors(options);
+  app.enableCors({
+    origin: 'https://ortvest-admin.vercel.app', // No trailing slash
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: [
+      'Authorization',
+      'Content-Type',
+      'Access-Control-Allow-Origin',
+    ],
+    credentials: true,
+  });
+
   await app.listen(8080);
 }
 bootstrap();
