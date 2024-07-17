@@ -12,6 +12,7 @@ async function bootstrap() {
       'Authorization',
       'Content-Type',
       'Access-Control-Allow-Origin',
+      'Mode',
     ],
     credentials: true,
   });
