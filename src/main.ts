@@ -3,13 +3,13 @@ import { AppModule } from './app.module';
 import { NestExpressApplication } from '@nestjs/platform-express';
 import { NextFunction, Response, Request } from 'express';
 
+const ortvestWebsiteUrl = process.env.ORTVEST_WEBSITE_URL;
+const ortvestAdminUrl = process.env.ORTVEST_ADMIN_URL;
+const localServer = process.env.LOCAL_FE;
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
 
-  const allowedOrigins = [
-    'https://ortvest-admin.vercel.app',
-    'https://www.ortvest.com',
-  ];
+  const allowedOrigins = [ortvestWebsiteUrl, ortvestAdminUrl, localServer];
 
   app.use((req: Request, res: Response, next: NextFunction) => {
     const origin = req.headers.origin as string;

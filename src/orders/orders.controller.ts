@@ -3,9 +3,8 @@ import {
   Controller,
   Delete,
   Get,
-  Param,
-  Post,
   Put,
+  Post,
   Query,
   UseGuards,
 } from '@nestjs/common';
@@ -31,8 +30,14 @@ export class OrdersController {
   }
 
   @UseGuards(AuthGuard)
+  @Delete()
+  async deleteOrder(@Query('orderId') orderId: string): Promise<boolean> {
+    return await this.ordersService.deleteOrder(orderId);
+  }
+
+  @UseGuards(AuthGuard)
   @Put('update')
-  async deleteOrder(@Body() order: Order): Promise<boolean> {
+  async updateOrder(@Body() order: Order): Promise<boolean> {
     return await this.ordersService.updateOrder(order);
   }
 }
